@@ -12,6 +12,7 @@ function BirdPage() {
       .then((r) => r.json())
       .then((birdsArray) => {
         setBirds(birdsArray);
+        console.log(birdsArray);
       });
   }, []);
 
@@ -24,7 +25,7 @@ function BirdPage() {
     return bird.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
-if(!birds) return <h1>...loading</h1>
+  if (!birds) return <h1>...loading</h1>;
 
   return (
     <main>
